@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect
 import numpy as np
 import pandas as pd
 from tensorflow import keras
-
 import scipy.stats as st
 import scipy.signal as sgl
 
@@ -326,7 +325,7 @@ def predict():
             print(features)
 
             # model 1 detects the id of the user of the signature
-            model_one_name = "/app/flask_app/model_val_9875_rms_8.h5"
+            model_one_name = "/app/flask_app/model1.h5"
 
             model = keras.models.load_model(model_one_name)
 
@@ -351,4 +350,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host='127.0.0.1', debug=True)
